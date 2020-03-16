@@ -2,6 +2,7 @@ import pytest
 from pages.product_page import ProductPage
 from pages.basket_page import BasketPage
 from pages.login_page import LoginPage
+from pages.main_page import MainPage
 
 
 class TestUserAddToBasketFromProductPage():
@@ -44,7 +45,7 @@ class TestUserAddToBasketFromProductPage():
 #                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4",
 #                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5",
 #                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6",
-#                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7",
+#                                  pytest.param("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7", marks=pytest.mark.xfail),
 #                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
 #                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
 
@@ -118,4 +119,6 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     cart_page = BasketPage(browser, browser.current_url)
     cart_page.look_if_cart_is_empty()
     cart_page.look_for_cart_is_empty_text()
+
+
 

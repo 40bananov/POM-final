@@ -1,5 +1,6 @@
 import pytest
 import requests
+import allure
 
 class ApiClient:
     def __init__(self, base_address):

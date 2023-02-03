@@ -2,6 +2,7 @@ import pytest
 import requests
 import allure
 
+
 class ApiClient:
     def __init__(self, base_address):
         self.base_address = base_address
@@ -15,6 +16,7 @@ class ApiClient:
         url = f"{self.base_address}{path}"
         with allure.step(f'GET request to: {url}'):
             return requests.get(url=url, params=params, headers=headers)
+
 
 @pytest.fixture
 def dog_api():

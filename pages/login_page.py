@@ -7,7 +7,6 @@ class LoginPage(BasePage):
     def __init__(self, *args, **kwargs):
         super(LoginPage, self).__init__(*args, **kwargs)
 
-
     def register_new_user(self):
         email = str(time.time()) + "@fakemail.org"
         password = '123qaz789'

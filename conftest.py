@@ -14,9 +14,10 @@ def browser(request):
     print("\nstart browser for test..")
     language = request.config.getoption("language")
     options = Options()
+    options.add_argument("--headless")
+    options.add_argument("start-maximized")
     options.add_experimental_option('prefs', {'intl.accept_languages': language})
-#   browser = webdriver.Chrome(options=options)
-    browser = webdriver.Chrome(ChromeDriverManager().install())
+    browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     yield browser
     print("\nquit browser..")
     browser.quit()
